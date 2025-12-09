@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Todo app</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <h2>Todo</h2>
+        <img class="theme-icon" src="./images/icon-moon.svg" alt="" />
+      </header>
+      <input
+        type="text"
+        id="new-todo"
+        name="todo"
+        placeholder="Create a new todo..."
+      />
+      <div class="todo-card">
+        <ul class="todo-items">
+          <!-- Todos item will be put dynamically -->
+        </ul>
+
+        <div class="action">
+          <p class="remain"><span class="number">0</span> items left</p>
+          <div class="action-filter">
+            <p class="all-todos">All</p>
+            <p class="active-todos">Active</p>
+            <p class="completed-todos">Completed</p>
+          </div>
+          <p class="clear-todos">Clear Completed</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drag and drop to reorder list -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Michael Prince</a>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

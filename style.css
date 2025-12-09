@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'BauhausBuglerW00-Medium', sans-serif;
+  background: hsl(0, 0%, 98%) url(./images/bg-desktop-light.jpg) no-repeat top
+    center;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 170px;
+  flex-direction: column;
+}
+
+.container {
+  width: 400px;
+}
+
+.header {
+  margin-top: -50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header img {
+  width: 15px;
+  height: auto;
+  cursor: pointer;
+}
+
+.header h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 5px;
+}
+
+input {
+  background: #ffffff;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  padding: 15px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-family: 'BauhausBuglerW00-Medium', sans-serif;
+}
+
+input::placeholder {
+  color: hsl(236, 9%, 61%);
+}
+.todo-card {
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.todo-items .todo-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  border-bottom: 1.3px solid hsl(233, 11%, 84%);
+  cursor: pointer;
+}
+
+.todo-item .check {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid hsl(233, 11%, 84%);
+  cursor: pointer;
+  flex-shrink: 0; /* prevents shrinking */
+}
+
+.todo-item .todo-text {
+  flex: 1; /* takes all remaining space */
+  font-size: 14px;
+  color: hsl(235, 19%, 35%);
+}
+
+.todo-item .delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0; /* keeps it fixed on the right */
+}
+
+.delete img {
+  width: 12px;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  border-bottom: 1.3px solid hsl(233, 11%, 84%);
+  cursor: pointer;
+}
+
+.action p {
+  font-size: 13px;
+  color: hsl(236, 9%, 61%);
+}
+
+.action p.remain {
+  font-size: 12px;
+  color: hsl(236, 9%, 61%);
+}
+
+.action-filter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex: 1; /* takes all remaining space */
+}
+
+.action .completed-todos {
+  font-weight: bold;
+}
+
+.action .active-todos {
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+.action .all-todos {
+  font-weight: bold;
+}
+
+.action .clear-todos:hover {
+  transition: 0.5s ease;
+  color: #4a4a4a;
+}
+
+/* function class */
+.check.completed {
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.check.completed::after {
+  content: '✓';
+  display: block;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+.action p.active {
+  color: hsl(220, 98%, 61%); /* blue highlight */
+  font-weight: 700;
+}
+
+/* Todo text when completed */
+.todo-text.completed {
+  text-decoration: line-through;
+  color: hsl(233, 11%, 84%);
+}
+
+.attribution {
+  margin: 20px 0;
+}
+
+/* DARK THEME */
+body.dark {
+  background: hsl(235, 21%, 11%) url(./images/bg-desktop-dark.jpg) no-repeat top
+    center;
+  background-size: contain;
+}
+
+body.dark input,
+body.dark .todo-card {
+  background: hsl(235, 24%, 19%);
+  color: hsl(234, 39%, 85%);
+}
+
+body.dark .todo-item {
+  border-bottom: 1.3px solid hsl(233, 14%, 35%);
+}
+
+body.dark .todo-item .todo-text {
+  color: hsl(234, 39%, 85%);
+}
+
+body.dark .action p {
+  color: hsl(234, 39%, 85%);
+}
+
+body.dark .action .clear-todos:hover {
+  color: #fff;
+}
+
+body.dark .action p.active {
+  color: hsl(220, 98%, 61%); /* blue highlight */
+  font-weight: 700;
+}
+
+body.dark .attribution {
+  color: white;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+  body {
+    padding-top: 120px;
+    background: hsl(0, 0%, 98%) url(./images/bg-mobile-light.jpg) no-repeat top
+      center;
+    background-size: contain;
+  }
+
+  body.dark {
+    background: hsl(235, 21%, 11%) url(./images/bg-mobile-dark.jpg) no-repeat
+      top center;
+    background-size: contain;
+  }
+
+  .container {
+    width: 80%;
+  }
+
+  .header h2 {
+    font-size: 26px;
+  }
+
+  .header img {
+    width: 18px;
+  }
+
+  .action {
+    justify-content: space-between;
+  }
+
+  .action-filter {
+    position: absolute;
+    bottom: 80px;
+    text-align: center;
+    left: 50%;
+    right: 50%;
+  }
+
+  .action-filter p {
+    font-size: 16px;
+  }
+
+  .attribution {
+    margin-top: 100px;
+  }
+}
